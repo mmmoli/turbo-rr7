@@ -16,7 +16,7 @@ import { i18n } from "@lingui/core";
 import { loadCatalog } from "@repo/shared-i18n";
 import { useEffect, useMemo } from "react";
 import type { Route } from "./+types/root";
-import stylesheet from "./app.css?url";
+import stylesheet from "@repo/shared-ui/global.css?url";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
