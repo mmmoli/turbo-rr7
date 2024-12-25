@@ -2,8 +2,13 @@
   "name": "@repo/shared-i18n",
   "module": "src/index.ts",
   "type": "module",
+  "scripts": {
+    "lint": "biome lint ./app",
+    "format": "biome format ./app --write"
+  },
   "devDependencies": {
     "@lingui/cli": "^5.1.2",
+    "@repo/config-biome": "workspace:*",
     "@types/accept-language-parser": "^1.5.6",
     "@types/bun": "latest"
   },
