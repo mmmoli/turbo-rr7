@@ -1,0 +1,19 @@
+{
+  "name": "@repo/config-biome",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "bunx npm-check-updates -ui"
+  },
+  "exports": {
+    "./biome": "./biome.json"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
+}

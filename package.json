@@ -14,6 +14,7 @@
     "test:integration": "vitest run --browser.headless"
   },
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ]
 }
