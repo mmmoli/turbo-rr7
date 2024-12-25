@@ -11,7 +11,9 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "test": "turbo test",
-    "test:integration": "vitest run --browser.headless"
+    "test:integration": "vitest run --browser.headless",
+    "i18n:extract": "lingui extract --clean",
+    "i18n:compile": "lingui compile --typescript"
   },
   "workspaces": [
     "apps/*",

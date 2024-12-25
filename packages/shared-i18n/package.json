@@ -1,0 +1,22 @@
+{
+  "name": "@repo/shared-i18n",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/accept-language-parser": "^1.5.6",
+    "@types/bun": "latest"
+  },
+  "exports": {
+    "./lingui.server": "./src/lingui.server.ts",
+    "./react-router.server": "./src/react-router.server.ts",
+    "./utils": "./src/utils.ts",
+    ".": "./src/index.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "accept-language-parser": "^1.5.0",
+    "intl-parse-accept-language": "^1.0.0"
+  }
+}
