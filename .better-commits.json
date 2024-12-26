@@ -90,6 +90,10 @@
         "label": "shared-ui"
       },
       {
+        "value": "module-documents",
+        "label": "module-documents"
+      },
+      {
         "value": "tools",
         "label": "tools"
       },

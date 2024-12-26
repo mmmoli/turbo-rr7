@@ -4,7 +4,8 @@
   "private": true,
   "license": "MIT",
   "exports": {
-    "./react-library.json": "./react-library.json"
+    "./react-library.json": "./react-library.json",
+    "./lib.json": "./lib.json"
   },
   "publishConfig": {
     "access": "public"

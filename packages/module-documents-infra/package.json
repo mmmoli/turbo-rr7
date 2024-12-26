@@ -1,0 +1,26 @@
+{
+  "name": "@repo/module-documents-infra",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "dev": "bun build src/index.ts --outdir dist --watch && tsc",
+    "build": "bun build src/index.ts --outdir dist --minify && tsc",
+    "lint": "biome lint ./src",
+    "format": "biome format ./src --write"
+  },
+  "devDependencies": {
+    "@repo/config-biome": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@repo/module-documents-core": "workspace:*"
+  }
+}
