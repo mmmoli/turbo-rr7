@@ -17,7 +17,7 @@ import routerBindings, {
 import dataProvider from '@refinedev/simple-rest';
 import axios from 'axios';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router';
-import './App.css';
+import '@repo/shared-ui/global.css';
 import { Layout } from './components/layout';
 import type { CredentialResponse } from './interfaces/google';
 import {
