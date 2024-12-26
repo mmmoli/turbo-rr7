@@ -86,6 +86,10 @@
         "label": "web"
       },
       {
+        "value": "admin",
+        "label": "admin"
+      },
+      {
         "value": "shared-ui",
         "label": "shared-ui"
       },
