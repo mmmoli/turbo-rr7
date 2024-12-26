@@ -1,1 +1,1 @@
-export * from "./use-cases/create-document";
+export * from './use-cases/create-document';

@@ -11,8 +11,8 @@
   ],
   "scripts": {
     "shadcn:add": "bunx --bun shadcn@latest add",
-    "lint": "biome lint ./app",
-    "format": "biome format ./app --write",
+    "lint": "biome lint ./src",
+    "format": "biome format ./src --write",
     "update": "bunx npm-check-updates -ui"
   },
   "exports": {

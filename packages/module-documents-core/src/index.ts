@@ -1,1 +1,1 @@
-export * from "./infra";
+export * from './infra';

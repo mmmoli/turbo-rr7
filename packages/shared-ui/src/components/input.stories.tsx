@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Input } from './input'
+import { Input } from './input';
 
 const meta: Meta<typeof Input> = {
-	component: () => <Input placeholder="Email" />,
-}
+  component: () => <Input placeholder="Email" />,
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof Input>
+type Story = StoryObj<typeof Input>;
 
-export const Default: Story = {}
+export const Default: Story = {};

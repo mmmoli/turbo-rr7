@@ -3,8 +3,8 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "lint": "biome lint ./app",
-    "format": "biome format ./app --write"
+    "lint": "biome lint ./src",
+    "format": "biome format ./src --write"
   },
   "devDependencies": {
     "@lingui/cli": "^5.1.2",

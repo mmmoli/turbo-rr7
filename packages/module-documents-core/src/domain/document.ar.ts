@@ -1,4 +1,4 @@
-import { Aggregate, Result, Ok, UID } from "rich-domain";
+import { Aggregate, type Result, Ok, type UID } from 'rich-domain';
 
 export interface DocumentProps {
   id?: UID;

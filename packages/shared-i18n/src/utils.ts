@@ -1,4 +1,4 @@
-import { parseAcceptLanguage } from "intl-parse-accept-language";
+import { parseAcceptLanguage } from 'intl-parse-accept-language';
 
 export type Locales = string | string[] | undefined;
 
@@ -22,7 +22,7 @@ export function getClientLocales(request: Request): Locales;
 export function getClientLocales(requestOrHeaders: Request | Headers): Locales {
   const headers = getHeaders(requestOrHeaders);
 
-  const acceptLanguage = headers.get("Accept-Language");
+  const acceptLanguage = headers.get('Accept-Language');
 
   // if the header is not defined, return undefined
   if (!acceptLanguage) return undefined;

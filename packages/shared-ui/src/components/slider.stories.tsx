@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Slider } from './slider'
+import { Slider } from './slider';
 
 const meta: Meta<typeof Slider> = {
-	component: () => <Slider defaultValue={[33]} max={100} step={1} />,
-}
+  component: () => <Slider defaultValue={[33]} max={100} step={1} />,
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof Slider>
+type Story = StoryObj<typeof Slider>;
 
-export const Default: Story = {}
+export const Default: Story = {};

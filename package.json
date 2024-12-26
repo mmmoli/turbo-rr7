@@ -1,6 +1,9 @@
 {
   "name": "@repo/main",
   "devDependencies": {
+    "@repo/config-biome": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
+    "husky": "^9.1.7",
     "turbo": "^2.3.3",
     "typescript": "5.7.2"
   },
@@ -10,10 +13,12 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
+    "format": "turbo format",
     "test": "turbo test",
     "test:integration": "vitest run --browser.headless",
     "i18n:extract": "lingui extract --clean",
-    "i18n:compile": "lingui compile --typescript"
+    "i18n:compile": "lingui compile --typescript",
+    "prepare": "husky"
   },
   "workspaces": [
     "apps/*",

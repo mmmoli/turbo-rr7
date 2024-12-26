@@ -1,6 +1,6 @@
-import type { Cookie, SessionStorage } from "react-router";
-import { pick } from "accept-language-parser";
-import { getClientLocales } from "./utils";
+import type { Cookie, SessionStorage } from 'react-router';
+import { pick } from 'accept-language-parser';
+import { getClientLocales } from './utils';
 
 export interface LanguageDetectorOption {
   /**
@@ -48,7 +48,7 @@ export interface LanguageDetectorOption {
    * - header
    * And finally the fallback language.
    */
-  order?: Array<"searchParams" | "cookie" | "session" | "header">;
+  order?: Array<'searchParams' | 'cookie' | 'session' | 'header'>;
 }
 
 export interface ReactRouterLinguiOptions {
@@ -91,11 +91,11 @@ export class LanguageDetector {
   private isSessionOnly(options: LanguageDetectorOption) {
     if (
       options.order?.length === 1 &&
-      options.order[0] === "session" &&
+      options.order[0] === 'session' &&
       !options.sessionStorage
     ) {
       throw new Error(
-        "You need a sessionStorage if you want to only get the locale from the session"
+        'You need a sessionStorage if you want to only get the locale from the session',
       );
     }
   }
@@ -103,39 +103,39 @@ export class LanguageDetector {
   private isCookieOnly(options: LanguageDetectorOption) {
     if (
       options.order?.length === 1 &&
-      options.order[0] === "cookie" &&
+      options.order[0] === 'cookie' &&
       !options.cookie
     ) {
       throw new Error(
-        "You need a cookie if you want to only get the locale from the cookie"
+        'You need a cookie if you want to only get the locale from the cookie',
       );
     }
   }
 
   public async detect(request: Request): Promise<string> {
     const order = this.options.order ?? [
-      "searchParams",
-      "cookie",
-      "session",
-      "header",
+      'searchParams',
+      'cookie',
+      'session',
+      'header',
     ];
 
     for (const method of order) {
       let locale: string | null = null;
 
-      if (method === "searchParams") {
+      if (method === 'searchParams') {
         locale = this.fromSearchParams(request);
       }
 
-      if (method === "cookie") {
+      if (method === 'cookie') {
         locale = await this.fromCookie(request);
       }
 
-      if (method === "session") {
+      if (method === 'session') {
         locale = await this.fromSessionStorage(request);
       }
 
-      if (method === "header") {
+      if (method === 'header') {
         locale = this.fromHeader(request);
       }
 
@@ -147,11 +147,11 @@ export class LanguageDetector {
 
   private fromSearchParams(request: Request): string | null {
     const url = new URL(request.url);
-    if (!url.searchParams.has(this.options.searchParamKey ?? "lng")) {
+    if (!url.searchParams.has(this.options.searchParamKey ?? 'lng')) {
       return null;
     }
     return this.fromSupported(
-      url.searchParams.get(this.options.searchParamKey ?? "lng")
+      url.searchParams.get(this.options.searchParamKey ?? 'lng'),
     );
   }
 
@@ -159,9 +159,9 @@ export class LanguageDetector {
     if (!this.options.cookie) return null;
 
     const cookie = this.options.cookie;
-    const lng = await cookie.parse(request.headers.get("Cookie"));
+    const lng = await cookie.parse(request.headers.get('Cookie'));
 
-    if (typeof lng !== "string" || !lng) return null;
+    if (typeof lng !== 'string' || !lng) return null;
 
     return this.fromSupported(lng);
   }
@@ -170,10 +170,10 @@ export class LanguageDetector {
     if (!this.options.sessionStorage) return null;
 
     const session = await this.options.sessionStorage.getSession(
-      request.headers.get("Cookie")
+      request.headers.get('Cookie'),
     );
 
-    const lng = session.get(this.options.sessionKey ?? "lng");
+    const lng = session.get(this.options.sessionKey ?? 'lng');
 
     if (!lng) return null;
 
@@ -185,7 +185,7 @@ export class LanguageDetector {
 
     if (!locales) return null;
 
-    if (Array.isArray(locales)) return this.fromSupported(locales.join(","));
+    if (Array.isArray(locales)) return this.fromSupported(locales.join(','));
 
     return this.fromSupported(locales);
   }
@@ -195,12 +195,12 @@ export class LanguageDetector {
       pick(
         this.options.supportedLanguages,
         language ?? this.options.fallbackLanguage,
-        { loose: false }
+        { loose: false },
       ) ||
       pick(
         this.options.supportedLanguages,
         language ?? this.options.fallbackLanguage,
-        { loose: true }
+        { loose: true },
       )
     );
   }
